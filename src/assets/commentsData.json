@@ -1,0 +1,57 @@
+[
+    {
+        "userName": "Sowmil Nooji",
+        "imageUrl": "../../assets/images/mickey.jpg",
+        "commentId": 0,
+        "commentTxt": "Overnight",
+        "currentDate": "Thu Oct 03 2019 00:38:58 GMT+0530 (India Standard Time)",
+        "commentLikes": 5,
+        "commentDisLikes": 0,
+        "replyComment": [
+            {
+                "userName": "Kevin Adam",
+                "imageUrl": "../../assets/images/catoonPhoto2.jpg",
+                "commentTxt": "sowmil",
+                "currentDate": "Thu Oct 03 2019 00:38:58 GMT+0530 (India Standard Time)",
+                "commentLikes": 5,
+                "commentDisLikes": 0
+            },
+            {
+                "userName": "Navneet Pandey",
+                "imageUrl": "../../assets/images/cartoonImage3.jpg",
+                "commentTxt": "pratik",
+                "currentDate": "Thu Oct 03 2019 00:38:58 GMT+0530 (India Standard Time)",
+                "commentLikes": 5,
+                "commentDisLikes": 0
+            },
+            {
+                "userName": "Jenny Hess",
+                "imageUrl": "../../assets/images/cartoonImage4.jpg",
+                "commentTxt": "karthik",
+                "currentDate": "Thu Oct 03 2019 00:38:58 GMT+0530 (India Standard Time)",
+                "commentLikes": 5,
+                "commentDisLikes": 0
+            }
+        ]
+    },
+    {
+        "userName": "Matt",
+        "imageUrl": "../../assets/images/cartoonPhoto1.jpg",
+        "commentId": 1,
+        "commentTxt": "fullDay",
+        "currentDate": "Thu Oct 03 2019 00:38:58 GMT+0530 (India Standard Time)",
+        "commentLikes": 5,
+        "commentDisLikes": 0,
+        "replyComment": []
+    },
+    {
+        "userName": "Elliot Fu",
+        "imageUrl": "../../assets/images/cartoonImage5.jpg",
+        "commentId": 2,
+        "commentTxt": "adasdad",
+        "currentDate": "Thu Oct 03 2019 00:38:58 GMT+0530 (India Standard Time)",
+        "commentLikes": 5,
+        "commentDisLikes": 0,
+        "replyComment": []
+    }
+]

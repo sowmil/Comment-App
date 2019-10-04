@@ -1,0 +1,73 @@
+<div class="comments" *ngIf="postComment!==undefined">
+    <h6 *ngIf="postComment?.length<1">No Comments found</h6>
+    <ul *ngIf="postComment?.length>0">
+        <li *ngFor="let post of postComment; let i = index;">
+            <div class="col-12 col-sm-12 comment-container">
+                <div class="col-2"><a><img class="commentImg" [src]="post.imageUrl"> </a></div>
+                <div class="col-10 comment-paragraph">
+                    <div class="comment-header">
+                        <h5>{{post.userName}}
+                            <span class="actions">{{post.currentDate | date: 'dd/MM/yyyy'}}</span>
+                        </h5>
+
+                    </div>
+                    <p>{{post.commentTxt}}</p>
+                </div>
+                <div class="actions" style=" margin-left: 80px;">
+
+                        <a href="#" (click)="likeComment(i)" class="reply-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{post.commentLikes}}</a>
+
+                   
+                    <span class="divider"></span>
+                    <a href="#" (click)="disLikeComment(i)" class="reply-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> {{post.commentDisLikes}}</a>
+
+                    <span class="divider"></span>
+                    <a href="#" (click)="replyComment(i)" class="reply-button"><i class="fa fa-reply"
+                        aria-hidden="true"></i> Reply</a>
+                    <span class="divider"></span>
+                    <a href="#" (click)="toggleComments()" class="reply-button"><i class="fa fa-comment-o" aria-hidden="true"></i> Comments {{post.replyComment.length}}</a>
+                    <span class="divider"></span>
+
+                </div>
+                <div *ngIf="post.replyComment.length >0 && childCommentShow " class="child-border"></div>
+                <div class="childCommentBox">
+
+                    <ul *ngIf="post?.replyComment?.length>0 && childCommentShow">
+                        <li *ngFor="let rl of post.replyComment ; let j = index;">
+                            <div class="col-12 col-sm-12 comment-container">
+                                <div class="col-2"><a><img class="commentImg" [src]="rl.imageUrl"> </a>
+                                </div>
+                                <div class="col-10 comment-paragraph">
+                                    <div class="comment-header">
+                                        <h5>{{rl.userName}}
+                                            <span class="actions">{{rl.currentDate | date: 'dd/MM/yyyy'}}</span>
+                                        </h5>
+
+                                    </div>
+                                    <p>{{rl.commentTxt}}</p>
+                                </div>
+                                <div class="actions" style=" margin-left: 80px;">
+
+                                        <a href="#" (click)="childLikeComment(i,j)" class="reply-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{rl.commentLikes}}</a>
+                
+                                   
+                                    <span class="divider"></span>
+                                    <a href="#" (click)="childDisLikeComment(i,j)" class="reply-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> {{rl.commentDisLikes}}</a>
+                
+                                    <span class="divider"></span>
+                                    <a href="#" (click)="replyComment(i)" class="reply-button"><i class="fa fa-reply"
+                                        aria-hidden="true"></i> Reply</a>
+                                    <span class="divider"></span>
+                                    <!-- <a href="#" (click)="toggleComments()" class="reply-button"><i class="fa fa-comment-o" aria-hidden="true"></i> Comments {{post.replyComment.length}}</a>
+                                    <span class="divider"></span> -->
+                
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div datacontainer></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
