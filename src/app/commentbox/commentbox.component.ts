@@ -13,8 +13,8 @@ export class CommentboxComponent implements OnInit {
   commentInfo: Array<object> = [];
   submitted: Boolean = false;
   public id = 0;
-  public imageUrl:String = "";
-  public userName:String = "";
+  public imageUrl:String = "../../assets/images/loginuser.jpg";
+  public userName:String = "Sam";
   public commentLikes = 0;
   public commentDisLikes = 0;
   @Output() usercomment = new EventEmitter();

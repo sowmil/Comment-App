@@ -10,8 +10,8 @@ export class ChildboxComponent implements OnInit {
 
   childForm: FormGroup;
   replyComment: Array<object> = [];
-  public imageUrl:String = "";
-  public userName:String = "";
+  public imageUrl:String = "../../assets/images/loginuser.jpg";
+  public userName:String = "Sam";
   public commentLikes = 0;
   public commentDisLikes = 0;
   submitted: Boolean = false;
