@@ -9,6 +9,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { ChildboxComponent } from './childbox/childbox.component';
 import { DatacontainerDirective } from './comments/comments.component';
 import { DateAgoPipe } from './date-ago.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DateAgoPipe } from './date-ago.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    NgxPaginationModule
   ],
   entryComponents: [ChildboxComponent],
   bootstrap: [AppComponent]

@@ -25,6 +25,7 @@ export class CommentsComponent implements OnInit, OnChanges{
   public commentIndex = 0;
   public reply: Array<object> = [];
   toggle ={};
+  p: number = 1;
 
   // @ViewChildren decorator to grab elements from the host view
   /* The return type of ViewChildren is QueryList.

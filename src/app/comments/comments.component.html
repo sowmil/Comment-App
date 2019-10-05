@@ -1,7 +1,7 @@
 <div class="comments" *ngIf="postComment!==undefined">
     <h6 *ngIf="postComment?.length<1">No Comments found</h6>
     <ul *ngIf="postComment?.length>0">
-        <li *ngFor="let post of postComment; let i = index;">
+        <li *ngFor="let post of postComment  | paginate: { itemsPerPage: 2, currentPage: p }; let i = index;">
             <div class="col-12 col-sm-12 comment-container">
                 <div class="col-2"><a><img class="commentImg" [src]="post.imageUrl"> </a></div>
                 <div class="col-10 comment-paragraph">
@@ -69,5 +69,6 @@
                 </div>
             </div>
         </li>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </ul>
 </div>
