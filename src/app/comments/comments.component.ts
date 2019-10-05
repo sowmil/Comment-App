@@ -24,7 +24,7 @@ export class CommentsComponent implements OnInit, OnChanges{
   public loadComponent = false;
   public commentIndex = 0;
   public reply: Array<object> = [];
-  public childCommentShow:boolean = false;
+  toggle ={};
 
   // @ViewChildren decorator to grab elements from the host view
   /* The return type of ViewChildren is QueryList.
@@ -47,12 +47,18 @@ export class CommentsComponent implements OnInit, OnChanges{
     if (this.postComment !== undefined) {
       console.log('Main array====>', this.postComment);
     }
+    this.setLocalStorage();
   }
 
   removeComment(no) {
     this.postComment.splice(no, 1);
     console.log('After remove array====>', this.postComment);
     this.countComments.emit(this.postComment);
+  }
+
+  setLocalStorage(){
+    localStorage.setItem('userName', 'Sam');
+    localStorage.setItem('imageUrl','../../assets/images/loginuser.jpg')
   }
 
   replyComment(index) {
@@ -111,7 +117,6 @@ export class CommentsComponent implements OnInit, OnChanges{
     this.countComments.emit(this.postComment);
   }
 
-  toggleComments() {
-    this.childCommentShow = !this.childCommentShow;
-  }
+
+
 }

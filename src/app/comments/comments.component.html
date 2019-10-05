@@ -7,7 +7,7 @@
                 <div class="col-10 comment-paragraph">
                     <div class="comment-header">
                         <h5>{{post.userName}}
-                            <span class="actions">{{post.currentDate | date: 'dd/MM/yyyy'}}</span>
+                            <span class="actions" style="color: #a5a5a5;">{{post.currentDate | dateAgo}}</span>
                         </h5>
 
                     </div>
@@ -22,17 +22,17 @@
                     <a href="#" (click)="disLikeComment(i)" class="reply-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> {{post.commentDisLikes}}</a>
 
                     <span class="divider"></span>
-                    <a href="#" (click)="replyComment(i)" class="reply-button"><i class="fa fa-reply"
+                    <a href="#" (click)="replyComment(i)"  class="reply-button"><i class="fa fa-reply"
                         aria-hidden="true"></i> Reply</a>
                     <span class="divider"></span>
-                    <a href="#" (click)="toggleComments()" class="reply-button"><i class="fa fa-comment-o" aria-hidden="true"></i> Comments {{post.replyComment.length}}</a>
+                    <a href="#" (click)="toggle[i] = !toggle[i]" class="reply-button"><i class="fa fa-comment-o" aria-hidden="true"></i> Comments {{post.replyComment.length}}</a>
                     <span class="divider"></span>
 
                 </div>
-                <div *ngIf="post.replyComment.length >0 && childCommentShow " class="child-border"></div>
+                <div *ngIf="post.replyComment.length >0 && toggle[i] " class="child-border"></div>
                 <div class="childCommentBox">
 
-                    <ul *ngIf="post?.replyComment?.length>0 && childCommentShow">
+                    <ul *ngIf="post?.replyComment?.length>0 && toggle[i]">
                         <li *ngFor="let rl of post.replyComment ; let j = index;">
                             <div class="col-12 col-sm-12 comment-container">
                                 <div class="col-2"><a><img class="commentImg" [src]="rl.imageUrl"> </a>
@@ -40,7 +40,7 @@
                                 <div class="col-10 comment-paragraph">
                                     <div class="comment-header">
                                         <h5>{{rl.userName}}
-                                            <span class="actions">{{rl.currentDate | date: 'dd/MM/yyyy'}}</span>
+                                            <span class="actions" style="color: #a5a5a5;">{{rl.currentDate | dateAgo}}</span>
                                         </h5>
 
                                     </div>

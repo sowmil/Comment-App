@@ -8,6 +8,7 @@ import { CommentboxComponent } from './commentbox/commentbox.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ChildboxComponent } from './childbox/childbox.component';
 import { DatacontainerDirective } from './comments/comments.component';
+import { DateAgoPipe } from './date-ago.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DatacontainerDirective } from './comments/comments.component';
     CommentboxComponent,
     CommentsComponent,
     ChildboxComponent,
-    DatacontainerDirective
+    DatacontainerDirective,
+    DateAgoPipe
   ],
   providers: [],
   imports: [
